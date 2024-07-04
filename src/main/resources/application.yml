@@ -1,0 +1,22 @@
+ spring:
+   jpa:
+    application:
+     mailing:
+       frontend:
+         activation-url: http://localhost:4200/activate-account
+     security:
+       jwt:
+         expiration: 3600
+         secret-key: 4f8b62e35d2e413d9a9b3a9f5799b1ce
+   profiles:
+    active: dev
+   servlet:
+    multipart:
+      max-file-size: 50MB
+ springdoc:
+   default-produces-media-type: application/json
+
+ server:
+   servlet:
+     context-path: /api/v1/
+

@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/booknetwork
+    username: postgres
+    password: Anton@2002
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true;
+    database : postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 8080
+    username: anton
+    password: anton
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+    application:
+      security:
+        jwt:
+          secret-key:  4f8b62e35d2e413d9a9b3a9f5799b1ce
+          expiration: 86400000
+      mailing:
+        frontend:
+          activation-url: http://localhost:4200/activate-account
